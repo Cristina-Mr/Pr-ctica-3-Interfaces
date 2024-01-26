@@ -3,99 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página con Grid</title>
+    <title>Práctica 3 con Grid</title>
     <link rel="stylesheet" href="plantilla3.css"/>
     <style>
     </style>
 </head>
 <body>
     <header>
+  
+      <div class="container2 p-5 my-5 border text-white">
         <div class="nav">
-            <img src="logo4.png" alt="">
-            <p class="eslogan">Buscando la naturaleza de las cosas</p>
-            <div  class="enlaces">
-                <a href=""> Inicio</a>
-                <a href=""> Asociados</a>
-                <a href=""> Sprints</a>
-                <a href=""> Contacta</a>
-            </div>
+          <label class="label" for="toggle">
+            &#9776;
+            <p class="Navigator">
 
-        </div>
+            </p>
+            
+        </label>
+          <img src="logo4.png" alt="">
+          <p class="eslogan">Buscando la naturaleza de las cosas</p>
+          <div class="menu">
+            <a href=""> Inicio</a>
+                 <a href=""> Asociados</a>
+                 <a href=""> Sprints</a>
+                 <a href=""> Contacta</a>
+     </div>
+<!--------
+  <div class="nav">
+   <label class="label" for="toggle">
+      &#9776;
+      <p class="Navigator">
+          Navigation
+      </p>
+      
+  </label>
+  <input type="checkbox" id="toggle">
+  <div class="menu">
+         <a href=""> Inicio</a>
+              <a href=""> Asociados</a>
+              <a href=""> Sprints</a>
+              <a href=""> Contacta</a>
+  </div>
+</div>
+
+  ------->
+
+          
     </header>
 
     <main>
-        <div class="caja1">
-            <div id="cabecera1">TO DO</div>
-             <div class="t">
-                <div id="tasks1">
-                    <h3>Tasks</h3>
-                    <p>Comprar material</p>
-                    <h3>Tags</h3>
-                    <p>Tiempo estimado: 5h</p>
-                    <h3>Notes</h3>
-                    <p>La compra la realizará el grupo 1 junto al grupo 2</p>
-                </div>
-
-                <div id="tasks1">
-                    <h3>Tasks</h3>
-                    <p>Comprar material</p>
-                    <h3>Tags</h3>
-                    <p>Tiempo estimado: 5h</p>
-                    <h3>Notes</h3>
-                    <p>La compra la realizará el grupo 1 junto al grupo 2</p>
-                </div>
-            </div>
+       <!--container 1------------------------------------------------------------------>
+<!--Caja 1------------------------------------------------------------------>
+<div class="container">
+    <div class="box">
+      <span></span>
+        <div class="content">
+            <audio id="audio" loop autoplay controls>
+              <source src="lofi.ogg" type="audio/ogg">
+                <source src="lofi.mp3" type="audio/mp3">
+            </audio>
         </div>
+     </div>
+     <!--Caja 2---------------------------------------------------------------->
+            <div class="video">
+                <iframe width="360" height="315" src="https://www.youtube.com/embed/yqED_NYA2fw?si=qJZ4ISRORtzck_Yz" 
+                title="YouTube video player" 
+                frameborder="0"
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 allowfullscreen></iframe>
+           </div>
+  <!---Caja 3----------------------------------------------------------------->
 
-        <div class="caja2">
-
-            <div id="cabecera2">IN PROGESS</div>
-
-            <div class="t">
-            <div id="tasks2">
-                <h3>Tasks</h3>
-                <p>Reforma A1</p>
-                <h3>Tags</h3>
-                <p>Tiempo estimado: 128h</p>
-                <p>Tiempo transcurrido: 12h</p>
-                <h3>Notes</h3>
-                <p>Cambio de turno el día 28 de septiembre</p>
-            </div>
-            </div>
-
-        </div>
-
-        <div class="caja3">
-
-            <div id="cabecera3">DONE</div>
-
-            <div class="t">
-            <div id="tasks3">
-                <h3>Tasks</h3>
-                <p>Estudio del tunel A-123J</p>
-                <h3>Tags</h3>
-                <p>Tiempo estimado: 224h</p>
-                <p>Tiempo empleado: 184h</p>
-                <h3>Notes</h3>
-                <p>No hay notas</p>
-            </div>
-            <div id="tasks3">
-                <h3>Tasks</h3>
-                <p>Estudio del tunel A-123J</p>
-                <h3>Tags</h3>
-                <p>Tiempo estimado: 224h</p>
-                <p>Tiempo empleado: 184h</p>
-                <h3>Notes</h3>
-                <p>No hay notas</p>
-            </div>
-        </div>
-    </div>
-
-    </div>
+          <div class="box">
+              <span></span>
+                <div class="content">
+                  <video class="short" loop autoplay controls>
+                    <source src="pesadilla.ogv" type="video/ogv">
+                    <source src="pesadilla.mp4" type="video/mp4">
+                    
+                  </video>
+                  </div>
+              </div>
+     <!---Fin cajas----------------------------------------------------------------->
 
     </main>
 
-    <footer>
+    <footer class="pie">
         <table>
             <tr>
               <th><h6>AREA DE NEGOCIO</h6></th>
@@ -123,6 +116,7 @@
           </table>
           <hr>
           <h4>&reg; 2018 Eco2. Todos los derechos reservados / Aviso legal / Política de Cookies/</h4>
+  
     </div>       
     </footer>
 </body>
