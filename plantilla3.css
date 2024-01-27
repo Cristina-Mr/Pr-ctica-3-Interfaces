@@ -1,40 +1,507 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url(fondo4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     display: grid;
-    grid-template-rows: repeat(3, 1fr); /* 3 filas iguales */
+    grid-template-rows: 10em 55em 30em; /* 3 filas iguales */
     grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
-    height: 100vh; /* Establece la altura de la página al 100% del viewport height */
+    min-height: 100vh; /* Establece la altura de la página al 100% del viewport height */
 }
+
+/****************    NAVEGADOR SUPERIOR    *********************/
+
+.nav{
+    background: rgb(30,194,213);
+    background: linear-gradient(90deg, rgba(30,194,213,1) 41%, rgba(147,245,251,1) 68%);
+    box-shadow: 0px 4px 8px black;
+    /*height: 150px;*/
+    width: 100%;
+    margin-bottom: 12px;
+    overflow: hidden; /* Asegura que el contenido no sobresalga si es demasiado grande */
+}
+
+.menu{
+    margin: 0 30px 0 0;
+}
+.menu a{
+    font-size: 40px;
+    padding: 100px;
+    text-decoration: none;
+}
+.menu .a{
+  z-index: 3;
+  position: relative;
+  clear: right;
+  color: #433F3F;
+  background: #fff;
+   margin: 0 30px;
+    line-height: 30px;
+   border-bottom: red;
+
+}
+.menu .a:hover{
+  color: #B81818;
+ border-bottom:3px solid #ccc;
+
+}
+.label{
+   margin: 0 40px 0 0;
+   font-size: 26px;
+   line-height: 22px;
+   display: none;
+   color: #433F3F;
+   float: right;
+   width: 180px;
+  }
+.Navigator{
+  display: inline-flex;
+  font-size: 25px;
+}
+/* menu */
+
+@media only screen and (min-width: 401px) and (max-width:  1002px) {
+   body {
+    margin: 0;
+    padding: 0;
+    background-image: url(fondomorado.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 10em 50em 30em; /* 3 filas iguales */
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+    min-height: 100vh; /* Establece la altura de la página al 100% del viewport height */
+    }
+
+    p{
+        display: none;
+    }
+    .menu{
+        text-align: center;
+        width: 100%;
+        display: none;
+      }
+      .menu .a{
+        display: block;
+        border-bottom: 1px solid #EAEAEA;
+        margin: 0;
+        font-size: 20px;
+      }
+      
+     .label{
+          display: block;
+          cursor: pointer;
+
+      }
+      #toggle:checked + .menu{
+        display: block;
+      }
+  
+}
+@media only screen and (max-width:  400px) {
+    body{
+        background-image: url(fondomorado.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    p{
+        display: none;
+    }
+    .container {
+        position: flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        cursor: default;
+    }
+
+    .pie div p {
+    display: block;
+    }
+
+    .pie div:hover p {
+    display: none;
+    }
+
+    .pie div {
+    flex-direction: row; /* Alinear elementos horizontalmente en pantallas más pequeñas */
+    justify-content: space-around; /* Espaciado uniforme entre los elementos flexibles */
+    }
+
+    .menu{
+        text-align: center;
+        width: 100%;
+        display: none;
+      }
+      .menu .a{
+        display: block;
+        border-bottom: 1px solid #EAEAEA;
+        margin: 0;
+        font-size: 25px;
+      }
+      
+     .label{
+          display: block;
+          cursor: pointer;
+
+      }
+      #toggle:checked + .menu{
+        display: block;
+      }
+  
+}
+@media only screen and (min-width: 1002px) and (max-width: 1312px){
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url(fondo5.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-rows: 10em 25em 30em; /* 3 filas iguales */
+        grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+        min-height: 100vh; /* Establece la altura de la página al 100% del viewport height */
+    }
+    
+    .menu a{
+        font-size: 32px;
+        padding: 40px;
+        text-decoration: none;
+    }
+    main {
+        grid-row: 2 / 2; /* Ocupa desde la segunda hasta la tercera fila */
+        grid-column: 1 / 3; /* Ocupa desde la primera hasta la segunda columna */
+        padding: 20px;
+        height: auto;
+    }
+    h6{
+        font-size: 12px;
+      
+    }
+    .pie div {
+        flex-direction: row; /* Alinear elementos horizontalmente en pantallas de mínimo 1300px */
+        justify-content: space-around; /* Espaciado uniforme entre los elementos flexibles */
+        align-items: flex-start; /* Alinear los elementos flexibles en la parte superior */
+    }
+
+    /* Estilo para mostrar siempre los párrafos en pantallas de mínimo 100px */
+    .pie div p {
+        display: block;
+    }
+
+    /* Estilo para ocultar los párrafos cuando el h6 no está en estado :hover en pantallas de mínimo 1300px */
+    .pie div:hover p {
+        display: none;
+    }
+
+    #audio {
+        width: 210px;
+        height: 50px;
+        position: absolute;
+    }
+
+    .Navigator{
+    display: none;
+    }
+
+    .label{
+      margin: 0 40px 0 0;
+      font-size: 28px;
+      line-height: 70px;
+      color: grey;
+      float: right;
+      width: 26px;
+      float: right;
+    }
+}
+@media only screen and (min-width: 1312px) and (max-width: 1920px){
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url(fondo4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-rows: 14em 18em 20em;
+        grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+        min-height: 100vh; /* Establece la altura de la página al 100% del viewport height */
+    }
+    .menu a{
+        font-size: 36px;
+        padding: 40px;
+        text-decoration: none;
+    }
+   
+    main {
+        grid-row: 2 / 2; /* Ocupa desde la segunda hasta la tercera fila */
+        grid-column: 1 / 3; /* Ocupa desde la primera hasta la segunda columna */
+        padding: 20em;
+        height: auto;
+    }
+    h6{
+        font-size: 14px;
+      
+    }
+    .pie div {
+        flex-direction: row; /* Alinear elementos horizontalmente en pantallas de mínimo 1300px */
+        justify-content: space-around; /* Espaciado uniforme entre los elementos flexibles */
+        align-items: flex-start; /* Alinear los elementos flexibles en la parte superior */
+    }
+    .pie{
+        background-color: rgba(20, 20, 71, 0.815);
+        /*position: fixed;/*siempre permanece en el mismo lugar incluso si se desplaza la página.*/
+        bottom: 0;/* Para que aparezca al final de la pagina junto con absolute*/
+        width: auto;
+        height: 80px;
+        overflow: hidden;
+        border-top: 1.5px solid black;
+        box-shadow: 0px -3px 0px rgba(3, 2, 65, 0.5);
+        color: white;
+        overflow: hidden; /* Asegura que el contenido no sobresalga si es demasiado grande */
+    
+    }
+    
+}
+@media only screen and (min-width: 1921px){
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url(fondo4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: grid;
+        grid-template-rows: 19em 20em 10em;
+        grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+        min-height: 100vh; /* Establece la altura de la página al 100% del viewport height */
+    }
+   
+    main {
+        grid-row: 2 / 2; /* Ocupa desde la segunda hasta la tercera fila */
+        grid-column: 1 / 3; /* Ocupa desde la primera hasta la segunda columna */
+        padding: 20em;
+        height: auto;
+    }
+
+    h6{
+        font-size: 14px;
+      
+    }
+    .pie div {
+        flex-direction: row; /* Alinear elementos horizontalmente en pantallas de mínimo 1300px */
+        justify-content: space-around; /* Espaciado uniforme entre los elementos flexibles */
+        align-items: flex-start; /* Alinear los elementos flexibles en la parte superior */
+    }
+    .pie{
+        background-color: rgba(20, 20, 71, 0.815);
+        /*position: fixed;/*siempre permanece en el mismo lugar incluso si se desplaza la página.*/
+        bottom: 0;/* Para que aparezca al final de la pagina junto con absolute*/
+        width: auto;
+        height: 80px;
+        overflow: hidden;
+        border-top: 1.5px solid black;
+        box-shadow: 0px -3px 0px rgba(3, 2, 65, 0.5);
+        color: white;
+        overflow: hidden; /* Asegura que el contenido no sobresalga si es demasiado grande */
+    
+    }
+    
+}
+
+/******************************************************************************************/
+/***********************      Animacion sombra morada bajo nav      ***********************/
+.container2:hover{
+    box-shadow: 0 0 10px #c595d0, 0 0 40px #c595d0, 0 0 80px #c595d0;
+    transition-delay: 0.1s;
+ }
+
 
 header {
     grid-row: 1 / 4; /* Ocupa desde la primera hasta la tercera fila */
     grid-column: 1 / 3; /* Ocupa desde la primera hasta la segunda columna */
-    background-color: #3498db;
+    height: 180px;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-img{
-    /*border: 1px solid #ccc; /* Añade un borde para visualización de lo que ocupa el div*/
+img {
     width: 140px;
     height: 150px;
     float: left;
+    transition: transform 0.5s ease; /* Transición suave para la rotación al pasar el cursor */
+    animation: rotateConstantly 15s linear infinite; /* Animación continua de 5 segundos */
+}
+
+img:hover {
+    transform: scale(0.2); /* Hace la imagen un 20% del tamaño original al pasar el cursor */
+}
+
+@keyframes rotateConstantly {
+    to {
+        transform: rotate(360deg); /* Rotación de 360 grados en la animación continua */
+    }
 }
 
 main {
-    grid-row: 2 / 4; /* Ocupa desde la segunda hasta la tercera fila */
+    grid-row: 2 / 2; /* Ocupa desde la segunda hasta la tercera fila */
     grid-column: 1 / 3; /* Ocupa desde la primera hasta la segunda columna */
-    padding: 20px;
-    background-color: pink;
+    padding: 10px;
+    height: auto;
 }
 
+.container {
+    position: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: default;
+    gap: 40px;
+}
+
+.container .box {
+    position: relative;
+    width: 300px;
+    height: 300px; /* Altura fija para todas las cajas */
+    color: #fff;
+    background: #111;
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+    margin: 10px;
+    margin-top: 80px;
+    transition: 0.5s;
+    overflow-y: hidden; /* Por defecto, ocultamos la barra de desplazamiento */
+}
+/* Estilo para el control de audio */
+#audio {
+    width: 220px;
+    height: 40px;
+    position: absolute;
+    
+}
+#audio::-webkit-media-controls-timeline {
+    width: 80%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+#audio::-webkit-media-controls-timeline::-webkit-media-slider-thumb {
+    background-color: rgb(145, 40, 40);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.video{
+    position: relative;
+    display: flex;
+    border: 6px solid rgb(39, 6, 51);
+    justify-content: flex;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 0.5px;
+}
+.short{
+ width: 220px;
+}
+
+.container .box:hover {
+    transform: translateY(-30px);
+    box-shadow: 0 0 10px #39feff, 0 0 20px #39feff, 0 0 40px #39feff;
+}
+
+.container .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffbc00, #ff0058);
+}
+
+.container .box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(219deg, rgba(16, 24, 131, 1) 31%, rgba(142, 123, 166, 1) 58%, rgba(192, 164, 222, 1) 87%);
+    filter: blur(10px);
+}
+
+.container .box:nth-child(2)::before, .container .box:nth-child(2)::after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container .box:nth-child(3)::before, .container .box:nth-child(3)::after {
+    background: linear-gradient(219deg, rgba(114, 224, 154, 1) 31%, rgba(2, 25, 107, 1) 58%, rgba(123, 56, 195, 1) 87%);
+}
+
+.container .box span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.container .box .content {
+    position: relative;
+    z-index: 10;
+    padding: 20px 40px;
+}
+
+.container .box .content h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 0px;
+    font-family: 'Ink Free', sans-serif;
+}
+
+.container .box .content p {
+    font-size: 1.1em;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+    font-family: papyrus;
+}
+
+
 footer {
-    grid-row: 3 / 4; /* Ocupa solo la tercera fila */
+    grid-row: 4 / 4; /* Ocupa solo la tercera fila */
     grid-column: 1 / 3; /* Ocupa desde la primera hasta la segunda columna */
-    background-color: #2ecc71;
+    height: auto;
     color: white;
-    padding: 10px;
     text-align: center;
 }
+.pie{
+    background-color: rgba(20, 20, 71, 0.815);
+    /*position: fixed;/*siempre permanece en el mismo lugar incluso si se desplaza la página.*/
+    bottom: 0;/* Para que aparezca al final de la pagina junto con absolute*/
+    width: auto;
+    height: 320px;
+    overflow: hidden;
+    border-top: 1.5px solid black;
+    box-shadow: 0px -3px 0px rgba(3, 2, 65, 0.5);
+    color: white;
+    overflow: hidden; /* Asegura que el contenido no sobresalga si es demasiado grande */
+
+}
+/* Estilo básico para ocultar todos los párrafos dentro de h6 */
+.pie div p {
+    display: none;
+}
+
+/* Estilo para mostrar todos los párrafos cuando el h6 está en estado :hover */
+.pie div:hover p {
+    display: block;
+}
+
