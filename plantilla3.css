@@ -330,18 +330,46 @@ img {
     width: 140px;
     height: 150px;
     float: left;
-    transition: transform 0.5s ease; /* Transición suave para la rotación al pasar el cursor */
+    transition: transform 0.5s ease, filter 0.5s ease; 
     animation: rotateConstantly 15s linear infinite; /* Animación continua de 5 segundos */
 }
-
 img:hover {
-    transform: scale(0.2); /* Hace la imagen un 20% del tamaño original al pasar el cursor */
+    filter: brightness(1.2); /* Cambia el brillo al pasar el cursor sobre la imagen */
+    animation-play-state: paused;
 }
 
+
 @keyframes rotateConstantly {
-    to {
-        transform: rotate(360deg); /* Rotación de 360 grados en la animación continua */
+    0% {
+        transform: rotate(0deg);
     }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.eslogan{
+	animation: 3s chicle linear infinite;
+    font-size: 19px;
+}
+
+@keyframes chicle{
+	30%{
+		transform: 
+		        scaleX(1.15) scaleY(0.90);
+        color: rgb(236, 23, 76);
+	}
+	70%{
+		transform: 
+		        scaleX(0.90) scaleY(1.15);
+        color: pink;
+	}
+	60%{
+		transform: 
+		        scaleX(1.15) scaleY(0.90);
+        color: #4220a1;
+	}
+	
 }
 
 main {
