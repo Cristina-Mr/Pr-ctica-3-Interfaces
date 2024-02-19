@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <script src="funciones.js"></script>
     <title>Juego</title>
 </head>
 <body>
+
     <header class="encabezado1">
         <h1 class="Titulo">Nombre del Juego</h1>
     </header>
 
     <div class="container">
         <section class="menu">
-          
-                <button id="anterior">Anterior</button>
-                <button id="siguiente">Siguiente</button>
-                 
+            <button type="button" class="boton-nivel" onclick="mostrarParejas(5)">5 parejas</button>
+            <button type="button" class="boton-nivel" onclick="mostrarParejas(10)">10 parejas</button>
+            <button type="button" class="boton-nivel" onclick="mostrarParejas(15)">15 parejas</button>
         </section>
 
         <main class="box-container-juego">
             <div class="game">
-            </div>
 
-    </main>
+                <img class="1" src="/img/sally.jpg" alt="sally">
+                <img class="2" src="/img/jack.jpg" alt="jack">
+                <img class="3" src="/img/zero.jpg" alt="zero">
+                <img class="4" src="/img/oogie.jpg" alt="oogie-boogie">
+                <img class="5" src="/img/alcalde.jpg" alt="alcalde">
+                <!------5 cartas cuando selecciona 5 a duplicar y barajar-->
+                <img class="6" src="/img/pato.jpg" alt="pato-juguete">
+                <img class="7" src="/img/payaso.jpg" alt="payaso">
+                <img class="8" src="/img/barrel.jpg" alt="barrel">
+                <img class="9" src="/img/lock.jpg" alt="lock">
+                <img class="10" src="/img/shock.jpg" alt="shock">
+                 <!------10 cartas cuando selecciona 10 a duplicar y barajar-->
+                <img class="11" src="/img/calabaza.jpg" alt="rey-calabaza">
+                <img class="12" src="/img/alcalde2.jpg" alt="alcalde2">
+                <img class="13" src="/img/Finkelsteinn.png" alt="Finkelsteinn">
+                <img class="14" src="/img/vampiro1.jpg" alt="vampiro">
+                <img class="15" src="/img/harlequin-crop.jpg" alt="harlequin">
+                 <!------15 cartas cuando selecciona 15 a duplicar y barajar-->
+            </div>
+        </main>
     
     </div>
 </body>
