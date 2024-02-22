@@ -9,18 +9,28 @@
 </head>
 <body>
 
-    <header class="encabezado1">
+    <div class="encabezado1">
         <h1 class="Titulo">Nombre del Juego</h1>
-    </header>
+    </div>
 
     <div class="container">
-        <section class="menu">
+      
+        <div class="menu">
             <button type="button" class="boton-nivel" onclick="mostrarParejas(5)">5 parejas</button>
             <button type="button" class="boton-nivel" onclick="mostrarParejas(10)">10 parejas</button>
             <button type="button" class="boton-nivel" onclick="mostrarParejas(15)">15 parejas</button>
-        </section>
+        </div>
 
-        <main class="box-container-juego">
+
+        <div class="audio">
+            <audio id="audioPlayer" preload="metadata">
+                <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.mp3" type="audio/mp3">
+                <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.ogg" type="audio/ogg">
+            </audio>
+            <button type="button" class="boton-audio" onclick="reproducirAudio()">Audio</button>
+        </div>
+
+        <div class="box-container-juego">
             <div class="game">
 
                 <img class="1" src="/img/sally.jpg" alt="sally">
@@ -42,8 +52,8 @@
                 <img class="15" src="/img/harlequin-crop.jpg" alt="harlequin">
                  <!------15 cartas cuando selecciona 15 a duplicar y barajar-->
             </div>
-        </main>
-    
+        </div>
     </div>
+   
 </body>
 </html>

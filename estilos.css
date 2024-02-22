@@ -1,17 +1,16 @@
 body{
-    background-image: url(img/pesadilla1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: rgb(35,0,121);
+    background: linear-gradient(90deg, rgba(35,0,121,1) 22%, rgba(247,247,74,1) 44%, rgba(249,239,42,1) 53%, rgba(29,0,110,1) 76%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
 }
 
 .menu{
-    width: 10em;
-    height: 20em;
-    background-image: url(img/sally-fondo.jpg);
+    width:40em;
+    height: 6em;
+    margin-left: 2em;
+    margin-bottom: 1em;
     background-size: cover;
     background-repeat: no-repeat;
     border: 1px solid black;
@@ -22,32 +21,33 @@ body{
     flex-wrap: wrap;
 }
 
-
 .boton-nivel{
     background-color: #a158dc;
     color: white;
+    font-size: 28px;
     border-radius: 5px 5px 5px 5px;
-    width: 10em;
-    height: 4em;
+    width: 6em;
+    height: 3em;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
   
 }
 .container{
-    margin-top: 4em;
-    width: 100%;
+    margin-top: 1em;
+    margin-right: 3em;
+    width: 37em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     justify-content: space-between;
-    margin-right: 15em;
-    margin-left: 5em;
-    align-items: start;
+    padding-right: 60;
 }
 
 .encabezado1{
     color: #2C3E50;
-    width: 70em;
+    width: 39em;
     background-color: #F7DC6F;
     size: 20px;
     border: 3px solid #4A235A;
@@ -58,14 +58,181 @@ body{
 
 }
 .box-container-juego{
+    width: 100em;
+    margin-right: 29.5em;
     display: flex;
-    background-color: #F1C40F;
     border: 3px solid black;
 }
 
+.game{
+    width:10em;
+}
 .game img {
-    width: 150px; 
+    width: 200px; 
     height: auto; /* altura automática según la proporción de la imagen */
-    margin: 10px; /* margen entre las imágenes */
+    padding: 5px;
+    margin: 4px;
   }
+/*************************        Media  Full HD   1920 x 1200        *******************************/
+  @media screen and (min-width: 1920px) {
+    body{
+        background-image: url(img/fondo1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+    }
+   .encabezado1{
+    display: none;
+   }
+    .container{
+        margin-top: 4em;
+        width: auto;
+    }
+    .box-container-juego{
+        width: 118em;
+        display: flex;
+        background-color: #F1C40F;
+        border: 3px solid black;
+    }
+    .game img {
+        width: 150px; 
+        height: auto; /* altura automática según la proporción de la imagen */
+        margin: 10px; /* margen entre las imágenes */
+        margin-right: 1em;
+      }
 
+      .menu{
+        width: 40em;
+        height: 10em;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        background-repeat: no-repeat;
+        border: 1px solid black;
+    }
+    .game{
+        width:118em;
+    }
+    .audio{
+        width: 6em;
+        margin-right: 65em;
+        margin-left: 0;
+    }
+    .boton-audio {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgb(188, 126, 240);
+        background-color: #29034d;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .boton-audio::before,
+    .boton-audio::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background-color: rgb(81, 181, 240);
+        z-index: 1;
+        transition: transform 1s ease-in-out;
+    }
+    
+    .boton-audio::before {
+        filter: blur(20px);
+        opacity: 0;
+    }
+    
+    .boton-audio::after {
+        mix-blend-mode: screen;
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+    
+    .boton-audio:hover::before {
+        opacity: 1;
+    }
+    
+    .boton-audio:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
+    
+    body{
+        background-image: url(img/fondo-tablet.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+    }
+    .encabezado1{
+        color: #2C3E50;
+        width: auto;
+        background-color: #F7DC6F;
+        size: 20px;
+        border: 3px solid #4A235A;
+        border-radius: 10px 10px 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .game img {
+        width: 128px; 
+        height: auto; /* altura automática según la proporción de la imagen */
+        margin: 1px; /* margen entre las imágenes */
+        margin-left: 1em;
+      }
+      .container{
+        margin-top: 4em;
+        margin-right: 3em;
+        width: 60em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
+        padding-right: 60;
+        align-items: start;
+    }
+
+      .menu{
+        width: 8em;
+        height: 16em;
+        background-image: url(img/sally-fondo.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .boton-nivel{
+        background-color: #a158dc;
+        color: white;
+        font-size: 20px;
+        border-radius: 5px 5px 5px 5px;
+        width: 6em;
+        height: 3em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      
+    }
+
+    .game{
+        width:49em;
+    }
+}
