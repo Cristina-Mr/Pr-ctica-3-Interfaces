@@ -92,12 +92,15 @@ body{
     .box-container-juego{
         width: 118em;
         display: flex;
-        background-color: #F1C40F;
-        border: 3px solid black;
+        background: rgb(65, 34, 142);
+        border: 5px solid rgb(240, 234, 204);
+        background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+        border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px; /* Valores no uniformes para hacer el borde deforme */
+        box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89); /* Sombras exteriores e interiores */
     }
     .game img {
-        width: 150px; 
-        height: auto; /* altura automática según la proporción de la imagen */
+        width: 190px; 
+        height: 200px; /* altura automática según la proporción de la imagen */
         margin: 10px; /* margen entre las imágenes */
         margin-right: 1em;
       }
@@ -113,6 +116,7 @@ body{
     }
     .game{
         width:118em;
+       
     }
     .audio{
         width: 6em;
@@ -122,7 +126,7 @@ body{
     .boton-audio {
         display: inline-block;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 10px;
         font-weight: bold;
         text-transform: uppercase;
         color: rgb(188, 126, 240);
