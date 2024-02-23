@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CristinaMoran_Practica5_estilos.css">
+    <link rel="stylesheet" href="CristinaMoran_Practica5_estilos_menu.css">
+    <script src="CristinaMoran_Practica5_funciones.js"></script>
+    <title>Juego</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest">
+    <style>
+
+    </style>
+</head>
+<body>
+   <div class="opciones">
+        <p>Selecciona la dificultad</p>
+        <div class="selectArea">
+            <select id="nivelSelect">
+                <option value="5">5 parejas</option>
+                <option value="10">10 parejas</option>
+                <option value="15">15 parejas</option>
+            </select>
+            <button type="button" class="boton-comenzar" onclick="mostrarCartas()">Go!</button>
+        </div><!--selectArea-->
+  
+  
+            <p>Play / Pause Audio</p>
+        <div class="audio">
+                <audio id="audioPlayer" preload="metadata" loop>
+                    <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.mp3" type="audio/mp3">
+                    <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.ogg" type="audio/ogg">
+                </audio>
+                <button type="button" class="boton-audio" onclick="reproducirAudio()">Play Audio</button>
+                <button type="button" class="boton-audio" onclick="pausarAudio()">Pausar Audio</button>
+
+
+        </div>
+   
+        <div class="i">
+            <div class="info">
+                <button type="button" class="instrucciones" onclick="toggleInstrucciones()">Cómo se Juega</button>
+                <div id="instruccionesContainer" class="instrucciones-container" style="display: none;">
+                    <div id="instruccionesContent" class="instrucciones-content">
+                        <span class="cerrar" onclick="toggleInstrucciones()"> X </span>
+                        <article>
+                           ¡ Bienvenido, cuando selecciones una carta se volteará y aparecerá una imagen, deberás encontrar a su pareja. Tienes 3 dificultades, cuantas más parejas selecciones más cartas aparecerán.
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+   <div class="container" style="display: none;">
+
+   <div class="box-container-juego">
+        <div class="game">
+
+            <img class="1" src="/img/sally.jpg" alt="sally">
+            <img class="2" src="/img/jack.jpg" alt="jack">
+            <img class="3" src="/img/zero.jpg" alt="zero">
+            <img class="4" src="/img/oogie.jpg" alt="oogie-boogie">
+            <img class="5" src="/img/alcalde.jpg" alt="alcalde">
+            <!------5 cartas cuando selecciona 5 a duplicar y barajar-->
+            <img class="6" src="/img/pato.jpg" alt="pato-juguete">
+            <img class="7" src="/img/payaso.jpg" alt="payaso">
+            <img class="8" src="/img/barrel.jpg" alt="barrel">
+            <img class="9" src="/img/lock.jpg" alt="lock">
+            <img class="10" src="/img/shock.jpg" alt="shock">
+             <!------10 cartas cuando selecciona 10 a duplicar y barajar-->
+            <img class="11" src="/img/calabaza.jpg" alt="rey-calabaza">
+            <img class="12" src="/img/alcalde2.jpg" alt="alcalde2">
+            <img class="13" src="/img/Finkelsteinn.png" alt="Finkelsteinn">
+            <img class="14" src="/img/vampiro1.jpg" alt="vampiro">
+            <img class="15" src="/img/harlequin-crop.jpg" alt="harlequin">
+             <!------15 cartas cuando selecciona 15 a duplicar y barajar-->
+
+             
+        </div>
+        <audio id="flipSound" src="/audio/carta-efecto.mp3"></audio>
+    </div>
+    <button class="Volver" onclick="volverAOpciones()">Volver a Opciones</button>
+</div>
+<div id="mensajeFinal" class="mensaje-final parpadear" style="display: none;">
+    <p>¡Felicidades!. Has encontrado todas las parejas</p>
+</div>
+</body>
+</html>
+
