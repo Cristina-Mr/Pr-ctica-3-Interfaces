@@ -1,4 +1,4 @@
-/** Funciones para mostrar las imagenes segun nivel y que salgan barajadas **/
+/** Funciones para mostrar las imágenes según nivel y que salgan barajadas **/
 const cardsArray = [
     {'name': 'sally', 'img': '/img/sally.jpg'},
     {'name': 'jack', 'img': '/img/jack.jpg'},
@@ -23,8 +23,37 @@ const cardsReversearray = [
 
 let firstCard = null;
 let secondCard = null;
-let matches = 0;
-const totalMatches = cardsArray.length / 2;
+let animationId = null;
+const fadeDuration = 1000; // Duración de la animación de fade en milisegundos
+const targetOpacity = 0.5; // Opacidad objetivo (0.0 a 1.0)
+
+function fade(element, targetOpacity) {
+    let opacity = parseFloat(getComputedStyle(element).opacity);
+    const startTime = performance.now();
+
+    function animate(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        opacity += (targetOpacity - opacity) * (elapsedTime / fadeDuration);
+        element.style.opacity = opacity;
+
+        if (elapsedTime < fadeDuration) {
+            animationId = requestAnimationFrame(animate);
+        } else {
+            cancelAnimationFrame(animationId);
+            checkAllPairsFound(); // Llamamos a la función cuando la animación haya terminado
+        }
+    }
+
+    animationId = requestAnimationFrame(animate);
+}
+
+function resetOpacity(element) {
+    element.style.opacity = '';
+}
+
+function cancelAnimation() {
+    cancelAnimationFrame(animationId);
+}
 
 function mostrarParejas(numero) {
     const game = document.querySelector('.game');
@@ -62,14 +91,10 @@ function flipCard() {
             // Si coinciden, las cartas se quedan boca arriba
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
-            matches++;
-            console.log('Matches:', matches, 'Total:', totalMatches); // Agregamos este console.log
-            if (matches === totalMatches) {
-                setTimeout(() => {
-                    mostrarMensajeVictoria();
-                }, 1000); // Espera un segundo antes de mostrar el mensaje de victoria
-            }
+            fade(firstCard, targetOpacity);
+            fade(secondCard, targetOpacity);
             resetCards();
+            checkAllPairsFound();
         } else {
             // Si no coinciden, las cartas se voltean nuevamente después de un breve retraso
             setTimeout(() => {
@@ -78,6 +103,8 @@ function flipCard() {
                 setTimeout(() => {
                     firstCard.src = cardsReversearray[0].img;
                     secondCard.src = cardsReversearray[0].img;
+                    resetOpacity(firstCard);
+                    resetOpacity(secondCard);
                     resetCards();
                 }, 500); // Espera medio segundo antes de revertir la imagen
             }, 1000); // Espera un segundo antes de voltear la carta
@@ -97,14 +124,6 @@ function resetCards() {
     secondCard = null;
     var flipSound = document.getElementById("flipSound");
     flipSound.play();
-}
-
-function mostrarMensajeVictoria() {
-    const container = document.querySelector('.container');
-    const message = document.createElement('div');
-    message.classList.add('victory-message');
-    message.textContent = '¡Felicidades, has ganado!';
-    container.appendChild(message);
 }
 
 /** Promesas para comenzar audio al hacer clic en Play **/
@@ -169,9 +188,34 @@ function volverAOpciones() {
     // Muestra el elemento 'opciones' y oculta el elemento 'container'
     const opciones = document.querySelector('.opciones');
     const container = document.querySelector('.container');
+    const mensajeFinal = document.getElementById('mensajeFinal');
+    mensajeFinal.style.display = 'none';
     opciones.style.display = 'block';
     container.style.display = 'none';
     opciones.style.position = 'static'; 
+}
+
+function checkAllPairsFound() {
+    const cards = document.querySelectorAll('.game img');
+    let foundPairs = 0;
+    let foundCards = [];
+
+    cards.forEach(card => {
+        if (card.style.opacity == targetOpacity && !foundCards.includes(card.dataset.name)) {
+            foundPairs++;
+            foundCards.push(card.dataset.name);
+        }
+    });
+
+    if (foundPairs == cards.length / 2) {
+        mostrarMensajeFinal();
+    }
+}
+
+function mostrarMensajeFinal() {
+    console.log("Mostrando mensaje final...");
+    const mensajeFinal = document.getElementById('mensajeFinal');
+    mensajeFinal.style.display = 'block';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

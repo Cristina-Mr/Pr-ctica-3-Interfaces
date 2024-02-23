@@ -118,3 +118,31 @@ article{
     margin-left: 0; /* Empuja el botón "Como se juega" a la derecha */
     margin-right: 0; /* Restablece el margen derecho a cero para evitar un margen doble */
 }
+
+.mensaje-final{
+    font-family: "Mystery Quest", cursive;
+    height: 20em;
+    width: 110em;
+    padding: 1em;
+    background: rgb(65, 34, 142);
+    background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+    border: 5px solid rgb(240, 234, 204);
+    border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+    box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
+}
+
+@keyframes salto {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40px); /* Mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.parpadear {
+    animation: salto 2s infinite;
+}

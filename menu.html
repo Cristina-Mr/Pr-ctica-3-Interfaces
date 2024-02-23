@@ -27,7 +27,7 @@
   
             <p>Play / Pause Audio</p>
         <div class="audio">
-                <audio id="audioPlayer" preload="metadata" autoplay loop>
+                <audio id="audioPlayer" preload="metadata" loop>
                     <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.mp3" type="audio/mp3">
                     <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.ogg" type="audio/ogg">
                 </audio>
@@ -82,7 +82,9 @@
     </div>
     <button class="Volver" onclick="volverAOpciones()">Volver a Opciones</button>
 </div>
-
+<div id="mensajeFinal" class="mensaje-final parpadear" style="display: none;">
+    <p>¡Felicidades!. Has encontrado todas las parejas</p>
+</div>
 </body>
 </html>
 
