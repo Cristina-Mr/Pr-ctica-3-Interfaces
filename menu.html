@@ -8,73 +8,95 @@
     <title>Juego</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest">
     <style>
-        body{
-            background-image: url(/img/fondo1.jpg);
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            
+body {
+    margin-top: 4em;
+    background-image: url(/img/fondo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro del body */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del body */
+}
 
-        }
-        p {
-            font-family: "Mystery Quest", cursive;
-            font-size: 50px;
-            color: rgb(245, 240, 211);
-            text-shadow: 6px 2px 4px rgba(15, 5, 27, 0.884);
-        }
-        .opciones {
-            background: rgb(65, 34, 142);
-            background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
-            border: 5px solid rgb(240, 234, 204);
-            width: 60em;
-            height: 50em;
-            margin-top: 16em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px; /* Valores no uniformes para hacer el borde deforme */
-            box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89); /* Sombras exteriores e interiores */
-        }
+.opciones {
+    background: rgb(65, 34, 142);
+    background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+    border: 5px solid rgb(240, 234, 204);
+    width: 60em;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 6em;
+    align-items: center;
+    border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+    box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
+}
 
-       .ajustes{
-            margin-top: 20em;
-            display: flex;
-            flex-direction: column;
-            justify-items: center;
-            align-items: center;
-       }
-       
-       #opcion{
-        width: 15em;
-        height: 5em;
-       }
-    
-       
+ .ajustes{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+ select{
+    width: 12em;
+    height: 2em;
+    font-size: 40px;
+    font-family: "Mystery Quest", cursive;
+}
+.boton-audio{
+    width: 10em;
+    height: 2em;
+    font-size: 38px;
+    font-family: "Mystery Quest", cursive;
+}
+
+p {
+    font-family: "Mystery Quest", cursive;
+    height: 0.1em;
+    font-size: 88px;
+    color: rgb(245, 240, 211);
+    text-shadow: 6px 2px 4px rgba(15, 5, 27, 0.884);
+}
+.instrucciones{
+    height: 2em;
+    width: 10em;
+    font-size: 50px;
+    font-family: "Mystery Quest", cursive;
+}
     </style>
 </head>
 <body>
    <div class="opciones">
-        <div class="ajustes">
+        <p>Selecciona la dificultad</p>
+        <div class="selectArea">
+            <select>
+                <option class="boton-nivel" onclick="mostrarParejas(5)">5 parejas</option>
+                <option class="boton-nivel" onclick="mostrarParejas(10)">10 parejas</option>
+                <option class="boton-nivel" onclick="mostrarParejas(15)">15 parejas</option>
+            </select>
+            </div><!--selectArea-->
+  
+  
+            <p>Play/Pause Audio</p>
+        <div class="audio">
+                <audio id="audioPlayer" preload="metadata" autoplay loop>
+                    <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.mp3" type="audio/mp3">
+                    <source src="/audio/Opening (Official Instrumental) - The Nightmare Before Christmas.ogg" type="audio/ogg">
+                </audio>
+                <button type="button" class="boton-audio" onclick="reproducirAudio()">Play Audio</button>
+                <button type="button" class="boton-audio" onclick="pausarAudio()">Pausar Audio</button>
 
+        </div>
+   
+        <div class="i">
             <div class="info">
                 <button type="button" class="instrucciones" onclick="">Cómo se Juega</button>
             </div>
-
-            <p>Selecciona la dificultad</p>
-            <div class="selectArea">
-                <select>
-                    <option selected>Dificultad</option>
-                    <option class="boton-nivel" onclick="mostrarParejas(5)">5 parejas</option>
-                    <option class="boton-nivel" onclick="mostrarParejas(10)">10 parejas</option>
-                    <option class="boton-nivel" onclick="mostrarParejas(15)">15 parejas</option>
-                </select>
-                </div><!--selectArea-->
-
         </div>
-    </div>
-
+   </div>
 </body>
 </html>
 

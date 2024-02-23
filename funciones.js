@@ -122,3 +122,12 @@ function reproducirAudio() {
         }
     });
 }
+
+function pausarAudio() {
+    const audio = document.getElementById('audioPlayer');
+    if (!audio.paused) {
+        audio.pause();
+        return true; // Indica que la pausa fue realizada con éxito
+    }
+    return false; // Indica que el audio ya estaba pausado
+}
