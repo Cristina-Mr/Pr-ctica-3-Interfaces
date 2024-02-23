@@ -82,15 +82,17 @@ body{
         display: flex;
         flex-wrap: wrap;
     }
-   .encabezado1{
-    display: none;
-   }
     .container{
-        margin-top: 4em;
-        width: auto;
+        margin-top: 1em;
+        margin-right: 17em;
+        width: 100em;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
     }
     .box-container-juego{
-        width: 118em;
+        width: 117em;
         display: flex;
         background: rgb(65, 34, 142);
         border: 5px solid rgb(240, 234, 204);
@@ -99,10 +101,11 @@ body{
         box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89); /* Sombras exteriores e interiores */
     }
     .game img {
-        width: 190px; 
-        height: 200px; /* altura automática según la proporción de la imagen */
-        margin: 10px; /* margen entre las imágenes */
-        margin-right: 1em;
+        margin: 15px;
+        width: 12em; 
+        height: 13em; /* altura automática según la proporción de la imagen */
+        border-radius: 10px 70px 20px 60px / 50px 20px 70px 30px;
+        box-shadow: 0 0 10px rgba(244, 245, 179, 0.925), inset 0 0 50px rgba(253, 247, 159, 0.89); /* Sombras exteriores e interiores */
       }
 
       .menu{
@@ -115,61 +118,21 @@ body{
         border: 1px solid black;
     }
     .game{
-        width:118em;
+        width:121em;
        
     }
-    .audio{
-        width: 6em;
-        margin-right: 65em;
-        margin-left: 0;
-    }
-    .boton-audio {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 10px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: rgb(188, 126, 240);
-        background-color: #29034d;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-    }
-    .boton-audio::before,
-    .boton-audio::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 5px;
-        background-color: rgb(81, 181, 240);
-        z-index: 1;
-        transition: transform 1s ease-in-out;
+    .Volver{
+        margin-top: 10px;
+        width: 8em;
+        font-size: 18px;
+        height: 5em;
+        font-family: "Mystery Quest", cursive;
+        background: rgb(250, 255, 175);
+        border: 5px solid rgb(185, 120, 247);
+        border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+        box-shadow: 0 0 40px rgb(197, 154, 253);
     }
     
-    .boton-audio::before {
-        filter: blur(20px);
-        opacity: 0;
-    }
-    
-    .boton-audio::after {
-        mix-blend-mode: screen;
-        transform: scaleX(0);
-        transform-origin: right;
-    }
-    
-    .boton-audio:hover::before {
-        opacity: 1;
-    }
-    
-    .boton-audio:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
 }
 @media screen and (min-width: 1024px) and (max-width: 1500px) {
     

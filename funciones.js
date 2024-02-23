@@ -86,17 +86,6 @@ function resetCards() {
     secondCard = null;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.boton-nivel');
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            const nivel = parseInt(button.textContent.split(' ')[0]);
-            mostrarParejas(nivel);
-        });
-    });
-});
-/** Fin ----  Funciones para mostrar las imagenes segun nivel y que salgan barajadas **/
-/******************************************************************************************************** */
 /** Promesas para comenzar audio al hacer clic en start **/
 
 function reproducirAudio() {
@@ -131,3 +120,44 @@ function pausarAudio() {
     }
     return false; // Indica que el audio ya estaba pausado
 }
+
+/**********  Mostrar instrucciones ****************/
+function toggleInstrucciones() {
+    const instruccionesContainer = document.getElementById('instruccionesContainer');
+    if (instruccionesContainer.style.display === 'none') {
+        instruccionesContainer.style.display = 'block';
+    } else {
+        instruccionesContainer.style.display = 'none';
+    }
+}
+
+/** Nueva función para mostrar cartas según la dificultad seleccionada **/
+function mostrarCartas() {
+    const selectElement = document.getElementById('nivelSelect');
+    const nivel = parseInt(selectElement.value);
+    mostrarParejas(nivel);
+
+    // Oculta el elemento 'opciones' y muestra el elemento 'container'
+    const opciones = document.querySelector('.opciones');
+    const container = document.querySelector('.container');
+    opciones.style.display = 'none';
+    container.style.display = 'block';
+}
+
+function volverAOpciones() {
+    // Muestra el elemento 'opciones' y oculta el elemento 'container'
+    const opciones = document.querySelector('.opciones');
+    const container = document.querySelector('.container');
+    opciones.style.display = 'block';
+    container.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.boton-nivel');
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const nivel = parseInt(button.textContent.split(' ')[0]);
+            mostrarParejas(nivel);
+        });
+    });
+});

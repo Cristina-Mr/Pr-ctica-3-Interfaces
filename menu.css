@@ -1,0 +1,99 @@
+body {
+    margin-top: 4em;
+    background-image: url(/img/fondo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro del body */
+    justify-content: center; /* Centra horizontalmente los elementos dentro del body */
+}
+
+.opciones {
+    background: rgb(65, 34, 142);
+    background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+    border: 5px solid rgb(240, 234, 204);
+    width: 60em;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 2em;
+    align-items: center;
+    border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+    box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
+}
+
+ .ajustes{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+ select{
+    width: 12em;
+    height: 2em;
+    margin-right: 1em;
+    font-size: 40px;
+    font-family: "Mystery Quest", cursive;
+}
+.boton-comenzar{
+    width: 5em;
+    margin-left: 2em;
+    height: 2em;
+    font-size: 38px;
+    font-family: "Mystery Quest", cursive;
+}
+.boton-audio{
+    width: 10em;
+    height: 2em;
+    font-size: 38px;
+    margin-left: 1em;
+    margin-right: 1em;
+    font-family: "Mystery Quest", cursive;
+}
+
+p {
+    font-family: "Mystery Quest", cursive;
+    height: 0.1em;
+    font-size: 88px;
+    color: rgb(245, 240, 211);
+    text-shadow: 6px 2px 4px rgba(15, 5, 27, 0.884);
+}
+.instrucciones{
+    height: 2em;
+    width: 10em;
+    font-size: 50px;
+    font-family: "Mystery Quest", cursive;
+}
+.instrucciones-container {
+    font-family: "Mystery Quest", cursive;
+    background: rgb(65, 34, 142);
+    background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+    border: 5px solid rgb(240, 234, 204);
+    border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+    box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
+    position: fixed;
+    height: 16em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+}
+article{
+    font-size: 40px;
+}
+
+.instrucciones-content {
+    position: relative;
+}
+
+.cerrar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
