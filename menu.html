@@ -42,7 +42,7 @@
                 <button type="button" class="instrucciones" onclick="toggleInstrucciones()">Cómo se Juega</button>
                 <div id="instruccionesContainer" class="instrucciones-container" style="display: none;">
                     <div id="instruccionesContent" class="instrucciones-content">
-                        <span class="cerrar" onclick="toggleInstrucciones()">X</span>
+                        <span class="cerrar" onclick="toggleInstrucciones()"> X </span>
                         <article>
                            ¡ Bienvenido, cuando selecciones una carta se volteará y aparecerá una imagen, deberás encontrar a su pareja. Tienes 3 dificultades, cuantas más parejas selecciones más cartas aparecerán.
                         </article>
@@ -78,10 +78,11 @@
 
              
         </div>
-        
+        <audio id="flipSound" src="/audio/carta-efecto.mp3"></audio>
     </div>
     <button class="Volver" onclick="volverAOpciones()">Volver a Opciones</button>
 </div>
+
 </body>
 </html>
 

@@ -15,6 +15,8 @@ body {
     width: 60em;
     height: 50em;
     display: flex;
+    position: fixed;
+    top: 4em;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
@@ -63,6 +65,7 @@ p {
 .instrucciones{
     height: 2em;
     width: 10em;
+    margin: 0.5em;
     font-size: 50px;
     font-family: "Mystery Quest", cursive;
 }
@@ -96,4 +99,22 @@ article{
     top: 0;
     right: 0;
     cursor: pointer;
+}
+/* Ajustes para el posicionamiento de los botones */
+.selectArea {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.boton-comenzar,
+.boton-audio,
+.boton-audio:last-child, /* Añadir el último botón para evitar que el botón "Como se juega" se alinee hacia la derecha */
+.instrucciones {
+    margin: 0.8em; /* Agrega margen horizontal a los botones */
+}
+
+/* Ajustes para el botón "Como se juega" */
+.selectArea .instrucciones {
+    margin-left: 0; /* Empuja el botón "Como se juega" a la derecha */
+    margin-right: 0; /* Restablece el margen derecho a cero para evitar un margen doble */
 }

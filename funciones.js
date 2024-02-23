@@ -23,6 +23,8 @@ const cardsReversearray = [
 
 let firstCard = null;
 let secondCard = null;
+let matches = 0;
+const totalMatches = cardsArray.length / 2;
 
 function mostrarParejas(numero) {
     const game = document.querySelector('.game');
@@ -60,6 +62,13 @@ function flipCard() {
             // Si coinciden, las cartas se quedan boca arriba
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
+            matches++;
+            console.log('Matches:', matches, 'Total:', totalMatches); // Agregamos este console.log
+            if (matches === totalMatches) {
+                setTimeout(() => {
+                    mostrarMensajeVictoria();
+                }, 1000); // Espera un segundo antes de mostrar el mensaje de victoria
+            }
             resetCards();
         } else {
             // Si no coinciden, las cartas se voltean nuevamente después de un breve retraso
@@ -77,16 +86,28 @@ function flipCard() {
 }
 
 function rotateCard(card) {
-    card.style.transition = "transform 0.7s ease";
+    card.style.transition = "transform 0.8s ease";
     card.style.transform = "rotateY(180deg)";
+    var flipSound = document.getElementById("flipSound");
+    flipSound.play();
 }
 
 function resetCards() {
     firstCard = null;
     secondCard = null;
+    var flipSound = document.getElementById("flipSound");
+    flipSound.play();
 }
 
-/** Promesas para comenzar audio al hacer clic en start **/
+function mostrarMensajeVictoria() {
+    const container = document.querySelector('.container');
+    const message = document.createElement('div');
+    message.classList.add('victory-message');
+    message.textContent = '¡Felicidades, has ganado!';
+    container.appendChild(message);
+}
+
+/** Promesas para comenzar audio al hacer clic en Play **/
 
 function reproducirAudio() {
     return new Promise((resolve, reject) => {
@@ -131,7 +152,7 @@ function toggleInstrucciones() {
     }
 }
 
-/** Nueva función para mostrar cartas según la dificultad seleccionada **/
+/** función para mostrar cartas según la dificultad seleccionada **/
 function mostrarCartas() {
     const selectElement = document.getElementById('nivelSelect');
     const nivel = parseInt(selectElement.value);
@@ -150,6 +171,7 @@ function volverAOpciones() {
     const container = document.querySelector('.container');
     opciones.style.display = 'block';
     container.style.display = 'none';
+    opciones.style.position = 'static'; 
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -159,5 +181,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const nivel = parseInt(button.textContent.split(' ')[0]);
             mostrarParejas(nivel);
         });
+    });
+
+    const goButton = document.querySelector('.boton-comenzar');
+    goButton.addEventListener('click', function () {
+        pausarAudio();
     });
 });
