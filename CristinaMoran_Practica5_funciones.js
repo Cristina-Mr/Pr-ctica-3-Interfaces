@@ -128,6 +128,8 @@ function resetCards() {
 
 /** Promesas para comenzar audio al hacer clic en Play **/
 
+let originalVolume = 1; // Almacenamos el volumen original del audio
+
 function reproducirAudio() {
     return new Promise((resolve, reject) => {
         const audio = document.getElementById('audioPlayer');
@@ -136,11 +138,13 @@ function reproducirAudio() {
         if (audio.readyState >= 2) {
             // Si el audio está cargado, simplemente lo reproducimos
             audio.play();
+            audio.volume = originalVolume; // Restauramos el volumen original
             resolve(true); // Indica que la reproducción fue iniciada por la promesa
         } else {
             // Si el audio aún no está cargado, esperamos a que se cargue y luego lo reproducimos
             audio.oncanplaythrough = () => {
                 audio.play();
+                audio.volume = originalVolume; // Restauramos el volumen original
                 resolve(true); // Indica que la reproducción fue iniciada por la promesa
             };
 
@@ -155,7 +159,18 @@ function reproducirAudio() {
 function pausarAudio() {
     const audio = document.getElementById('audioPlayer');
     if (!audio.paused) {
-        audio.pause();
+        // Reducir el volumen gradualmente
+        let volume = audio.volume;
+        const fadeOutInterval = setInterval(() => {
+            if (volume > 0) {
+                volume -= 0.1; // Reducir el volumen en 0.1 (puedes ajustar este valor)
+                audio.volume = volume < 0 ? 0 : volume; // Asegurarse de que el volumen no sea negativo
+            } else {
+                clearInterval(fadeOutInterval); // Detener el intervalo cuando el volumen llegue a 0
+                audio.pause(); // Pausar el audio
+                audio.volume = originalVolume; // Restaurar el volumen original
+            }
+        }, 100); // Intervalo de 100ms (puedes ajustar este valor)
         return true; // Indica que la pausa fue realizada con éxito
     }
     return false; // Indica que el audio ya estaba pausado
@@ -190,7 +205,7 @@ function volverAOpciones() {
     const container = document.querySelector('.container');
     const mensajeFinal = document.getElementById('mensajeFinal');
     mensajeFinal.style.display = 'none';
-    opciones.style.display = 'block';
+    opciones.style.display = 'flex';
     container.style.display = 'none';
     opciones.style.position = 'static'; 
 }

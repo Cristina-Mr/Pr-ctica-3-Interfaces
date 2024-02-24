@@ -5,76 +5,106 @@ body{
     flex-direction: column;
     flex-wrap: wrap;
 }
-
-.menu{
-    width:40em;
-    height: 6em;
-    margin-left: 2em;
-    margin-bottom: 1em;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.boton-nivel{
-    background-color: #a158dc;
-    color: white;
-    font-size: 28px;
-    border-radius: 5px 5px 5px 5px;
+.Volver{
+    margin-top: 10px;
     width: 6em;
-    height: 3em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  
+    font-size: 16px;
+    height: 3.5em;
+    font-family: "Mystery Quest", cursive;
+    background: rgb(250, 255, 175);
+    border: 5px solid rgb(185, 120, 247);
+    border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+    box-shadow: 0 0 40px rgb(197, 154, 253);
 }
 .container{
-    margin-top: 1em;
-    margin-right: 3em;
-    width: 37em;
+    margin-top: 0;
+    margin-right: 30em;
+    width: 17.2em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     justify-content: space-between;
     padding-right: 60;
 }
-
-.encabezado1{
-    color: #2C3E50;
-    width: 39em;
-    background-color: #F7DC6F;
-    size: 20px;
-    border: 3px solid #4A235A;
-    border-radius: 10px 10px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
 .box-container-juego{
-    width: 100em;
-    margin-right: 29.5em;
+    background: rgb(65, 34, 142);
+    background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+    border: 5px solid rgb(240, 234, 204);
+    border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+    box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
+    width: 17.2em;
+    margin-right: 20em;
     display: flex;
-    border: 3px solid black;
 }
 
 .game{
-    width:10em;
+    width:17.2em;
 }
 .game img {
-    width: 200px; 
-    height: auto; /* altura automática según la proporción de la imagen */
-    padding: 5px;
-    margin: 4px;
+    border: 1px solid rgb(240, 234, 204);
+    border-radius: 30px 10px 50px 20px / 10px 70px 20px 60px;
+    box-shadow: 0 0 6px rgba(247, 227, 116, 0.61), inset 0 0 6px rgba(253, 247, 159, 0.89);
+    width: 2.5em; 
+    height: 3.5em; /* altura automática según la proporción de la imagen */
+    padding: 0;
+    margin: 6px;
   }
-/*************************        Media  Full HD   1920 x 1200        *******************************/
-  @media screen and (min-width: 1920px) {
+  @media only screen and (min-width: 500px) and (orientation: landscape){
+    .game img {
+        width: 2.5em; 
+        height: 3.5em; 
+    }
+    .container{
+        margin-right: 12em;
+        width: 34em;
+    }
+    .Volver{
+        font-size: 16px;
+        height: 4em;
+    }
+    .box-container-juego{
+        background: rgb(65, 34, 142);
+        background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+        border: 5px solid rgb(240, 234, 204);
+        border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+        box-shadow: 0 0 10px rgba(247, 227, 116, 0.61), inset 0 0 20px rgba(253, 247, 159, 0.89);
+        width: 34em;
+        display: flex;
+    }
+    .game{
+        width: 34em;
+    }
+  }
+@media screen and (min-width: 1200px) and (max-width: 1919px) {
+
+    .game img {
+        width: 6em; 
+        height: 7em; /* altura automática según la proporción de la imagen */
+        margin-left: 1em;
+        box-shadow: 0 0 10px rgba(244, 245, 179, 0.925), inset 0 0 50px rgba(253, 247, 159, 0.89); /* Sombras exteriores e interiores */
+    }
+    .container{
+        margin-top: 0em;
+        margin-right: 12em;
+        width: 60em;
+    }
+    .Volver{
+        font-size: 16px;
+        height: 4em;
+    }
+    .box-container-juego{
+        background: rgb(65, 34, 142);
+        background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
+        border: 5px solid rgb(240, 234, 204);
+        border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
+        box-shadow: 0 0 10px rgba(247, 227, 116, 0.61), inset 0 0 20px rgba(253, 247, 159, 0.89);
+        width: 68em;
+        display: flex;
+    }
+    .game{
+        width:68em;
+    }
+}
+@media screen and (min-width: 1920px) {
     body{
         background-image: url(img/fondo1.jpg);
         background-repeat: no-repeat;
@@ -103,19 +133,9 @@ body{
     .game img {
         margin: 15px;
         width: 9em; 
-        height: 10em; /* altura automática según la proporción de la imagen */
+        height: 10em; 
         border-radius: 10px 70px 20px 60px / 50px 20px 70px 30px;
         box-shadow: 0 0 10px rgba(244, 245, 179, 0.925), inset 0 0 50px rgba(253, 247, 159, 0.89); /* Sombras exteriores e interiores */
-      }
-
-      .menu{
-        width: 40em;
-        height: 10em;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        background-repeat: no-repeat;
-        border: 1px solid black;
     }
     .game{
         width:121em;
@@ -131,75 +151,5 @@ body{
         border: 5px solid rgb(185, 120, 247);
         border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
         box-shadow: 0 0 40px rgb(197, 154, 253);
-    }
-    
-}
-@media screen and (min-width: 1024px) and (max-width: 1500px) {
-    
-    body{
-        background-image: url(img/fondo-tablet.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-    }
-    .encabezado1{
-        color: #2C3E50;
-        width: auto;
-        background-color: #F7DC6F;
-        size: 20px;
-        border: 3px solid #4A235A;
-        border-radius: 10px 10px 10px 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-    }
-    .game img {
-        width: 128px; 
-        height: auto; /* altura automática según la proporción de la imagen */
-        margin: 1px; /* margen entre las imágenes */
-        margin-left: 1em;
-      }
-      .container{
-        margin-top: 4em;
-        margin-right: 3em;
-        width: 60em;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        justify-content: space-between;
-        padding-right: 60;
-        align-items: start;
-    }
-
-      .menu{
-        width: 8em;
-        height: 16em;
-        background-image: url(img/sally-fondo.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        border: 1px solid black;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .boton-nivel{
-        background-color: #a158dc;
-        color: white;
-        font-size: 20px;
-        border-radius: 5px 5px 5px 5px;
-        width: 6em;
-        height: 3em;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-      
-    }
-
-    .game{
-        width:49em;
     }
 }

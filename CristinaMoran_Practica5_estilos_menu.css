@@ -1,31 +1,30 @@
 body {
-    margin-top: 4em;
-    background-image: url(/img/fondo1.jpg);
+    margin-top: 2em;
+    margin-right: 1em;
+    background-image: url(/img/fondo-movil.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center; /* Centra verticalmente los elementos dentro del body */
     justify-content: center; /* Centra horizontalmente los elementos dentro del body */
 }
-
 .opciones {
     background: rgb(65, 34, 142);
     background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
     border: 5px solid rgb(240, 234, 204);
-    width: 60em;
-    height: 50em;
+    width: 12em;
+    height: 22em;
     display: flex;
     position: fixed;
-    top: 4em;
+    top: 1em;
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
-    padding: 2em;
+    padding: 1em;
     align-items: center;
     border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
     box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
 }
-
  .ajustes{
     display: flex;
     flex-direction: column;
@@ -33,40 +32,40 @@ body {
     align-items: center;
 }
  select{
-    width: 12em;
+    width: 7em;
     height: 2em;
     margin-right: 1em;
-    font-size: 40px;
+    font-size: 15px;
     font-family: "Mystery Quest", cursive;
 }
 .boton-comenzar{
-    width: 5em;
-    margin-left: 2em;
-    height: 2em;
-    font-size: 38px;
+    width: 2em;
+    height: 1.5em;
+    margin-left: 4em;
+    font-size: 25px;
     font-family: "Mystery Quest", cursive;
 }
 .boton-audio{
-    width: 10em;
+    width: 7em;
     height: 2em;
-    font-size: 38px;
-    margin-left: 1em;
-    margin-right: 1em;
+    font-size: 20px;
+    margin-left: 0;
+    margin-right: 0;
     font-family: "Mystery Quest", cursive;
 }
-
 p {
     font-family: "Mystery Quest", cursive;
+    margin-right: 0;
     height: 0.1em;
-    font-size: 88px;
+    width: auto;
+    font-size: 18px;
     color: rgb(245, 240, 211);
     text-shadow: 6px 2px 4px rgba(15, 5, 27, 0.884);
 }
 .instrucciones{
     height: 2em;
-    width: 10em;
-    margin: 0.5em;
-    font-size: 50px;
+    width: 8em;
+    font-size: 20px;
     font-family: "Mystery Quest", cursive;
 }
 .instrucciones-container {
@@ -87,13 +86,12 @@ p {
     z-index: 999;
 }
 article{
-    font-size: 40px;
+    font-size: 20px;
+    width: 10em;
 }
-
 .instrucciones-content {
     position: relative;
 }
-
 .cerrar {
     position: absolute;
     top: 0;
@@ -112,17 +110,17 @@ article{
 .instrucciones {
     margin: 0.8em; /* Agrega margen horizontal a los botones */
 }
-
 /* Ajustes para el botón "Como se juega" */
 .selectArea .instrucciones {
     margin-left: 0; /* Empuja el botón "Como se juega" a la derecha */
     margin-right: 0; /* Restablece el margen derecho a cero para evitar un margen doble */
 }
-
 .mensaje-final{
     font-family: "Mystery Quest", cursive;
-    height: 20em;
-    width: 110em;
+    height: 10em;
+    width: 22em;
+    font-size: 10px;
+    margin-right: 50em;
     padding: 1em;
     background: rgb(65, 34, 142);
     background: linear-gradient(90deg, rgba(65, 34, 142, 0.7707457983193278) 54%, rgba(7, 1, 27, 0.7371323529411764) 95%);
@@ -130,19 +128,140 @@ article{
     border-radius: 50px 20px 70px 30px / 10px 70px 20px 60px;
     box-shadow: 0 0 40px rgba(247, 227, 116, 0.61), inset 0 0 50px rgba(253, 247, 159, 0.89);
 }
-
 @keyframes salto {
-    0% {
-        transform: translateY(0);
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-40px); /* Mueve hacia arriba */
+}
+100% {
+    transform: translateY(0);
+}
+}
+.parpadear {
+animation: salto 2s infinite;
+}
+@media only screen and (min-width: 500px) and (orientation: landscape){
+    .opciones {
+        width: 22em;
+        height: 15em;
     }
-    50% {
-        transform: translateY(-40px); /* Mueve hacia arriba */
+    .instrucciones-container {
+        height: 15em;
+        padding: 20px;
     }
-    100% {
-        transform: translateY(0);
+    article{
+        font-size: 40px;
+        width: 20em;
+    }
+    .mensaje-final{
+        height: 10em;
+        width: 50em;
+        font-size: 10px;
+        margin-right: 20em;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1919px){
+
+    body {
+        background-image: url(/img/fondoMQ.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .opciones {
+        width: 40em;
+        height: 40em;
+    }
+     select{
+        width: 10em;
+        height: 3em;
+        margin-right: 1em;
+        font-size: 28px;
+    }
+    .boton-comenzar{
+        width: 4em;
+        height: 2em;
+        font-size: 40px;
+    }
+    .boton-audio{
+        width: 9em;
+        height: 3em;
+        font-size: 30px;
+    }
+    p {
+        height: 0.1em;
+        width: auto;
+        font-size: 60px;
+    }
+    .instrucciones{
+        height: 2em;
+        width: 10em;
+        margin: 0.5em;
+        font-size: 50px;
+    }
+    article{
+        font-size: 40px;
+        width: 20em;
+    }
+    .mensaje-final{
+        height: 25em;
+        width: 100em;
+        font-size: 10px;
+        
+    }
+    
+}
+@media screen and (min-width: 1920px) {
+    body {
+        background-image: url(/img/fondoFHD.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .opciones {
+        width: 60em;
+        height: 50em;
+        top: 3em;
+    }
+
+     select{
+        width: 12em;
+        height: 2em;
+        margin-right: 1em;
+        font-size: 40px;
+    }
+    .boton-comenzar{
+        width: 5em;
+        height: 2em;
+        font-size: 38px;
+    }
+    .boton-audio{
+        width: 10em;
+        height: 2em;
+        font-size: 38px;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    p {
+        height: 0.1em;
+        width: auto;
+        font-size: 88px;
+    }
+    .instrucciones{
+        height: 2em;
+        width: 10em;
+        margin: 0.5em;
+        font-size: 50px;
+    }
+    article{
+        font-size: 40px;
+        width: 20em;
+    }
+    .mensaje-final{
+        height: 20em;
+        width: 110em;
+        padding: 1em;
+   
     }
 }
 
-.parpadear {
-    animation: salto 2s infinite;
-}
